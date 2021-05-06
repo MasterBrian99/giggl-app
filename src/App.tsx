@@ -1,13 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, StatusBar} from 'react-native';
 import MainScreen from './screens/MainScreen';
-
 const App = () => {
   return (
-    <View>
+    <>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor="#242a38"
+        translucent={true}
+      />
       <MainScreen />
-      <Text>Hello</Text>
-    </View>
+    </>
   );
 };
 
