@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/img/logo.png')} style={styles.logo} />
@@ -13,7 +13,9 @@ const MainScreen = () => {
           corny music jokes collected from our favorite online teachers and
           websites.
         </Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Home')}>
           <Text style={styles.btnText}>Get Started</Text>
         </TouchableOpacity>
       </View>
