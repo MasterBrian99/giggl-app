@@ -1,23 +1,16 @@
 import React from 'react';
-import {Button} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import MainScreen from '../screens/MainScreen';
 import Home from '../screens/Home';
 import Header from '../components/Header/Header';
 
 const Stack = createStackNavigator();
-import SettingIcon from 'react-native-vector-icons/Feather';
 import ChevronBackIcon from 'react-native-vector-icons/Ionicons';
 
-const Route = () => {
+const StackRoute = () => {
   return (
     <>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Main"
-          component={MainScreen}
-          options={{headerShown: false}}
-        />
         <Stack.Screen
           name="Home"
           component={Home}
@@ -25,6 +18,8 @@ const Route = () => {
             headerStyle: {
               backgroundColor: '#242a38',
               height: 60,
+              shadowRadius: 0,
+              shadowColor: 'transparent',
             },
             headerLeft: props => (
               <ChevronBackIcon
@@ -34,19 +29,25 @@ const Route = () => {
                 {...props}
                 onPress={() => {
                   navigation.goBack();
-                  // Do something\
                 }}
               />
             ),
+            title: 'Mahinda',
+            // @ts-ignore
             headerTitle: props => <Header {...props} />,
           })}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainScreen}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </>
   );
 };
 
-export default Route;
+export default StackRoute;
 
 // <Stack.Navigator
 //   screenOptions={{

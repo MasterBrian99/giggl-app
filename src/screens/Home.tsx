@@ -1,11 +1,18 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import Header from '../components/Header/Header';
+import {StyleSheet, ScrollView} from 'react-native';
+import SinglePost from '../components/Post/SinglePost';
 
 const Home = () => {
   return (
     <ScrollView style={styles.main}>
-      <Text>Hello</Text>
+      <SinglePost />
+      <SinglePost />
+      <SinglePost />
+      <SinglePost />
+      <SinglePost />
+      <SinglePost />
+      <SinglePost />
+      <SinglePost />
     </ScrollView>
   );
 };
@@ -14,6 +21,6 @@ export default Home;
 
 const styles = StyleSheet.create({
   main: {
-    backgroundColor: 'green',
+    backgroundColor: '#242a38',
   },
 });
