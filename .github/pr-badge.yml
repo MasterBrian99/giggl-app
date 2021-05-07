@@ -1,0 +1,14 @@
+- label: 'Preview'
+  message: 'PR $prNumber'
+  color: 'blue'
+  url: 'https://pr-$prNumber.company.com'
+
+- label: 'PR Size'
+  message: 'Large'
+  color: 'red'
+  when: '$additions > 500'
+
+- label: 'PR Size'
+  message: 'Medium'
+  color: 'yellow'
+  when: '$additions > 200 && $additions < 500'
