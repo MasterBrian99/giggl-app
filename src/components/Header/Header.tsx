@@ -1,8 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, LayoutChangeEvent} from 'react-native';
 import InfoIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import HeartoIcon from 'react-native-vector-icons/Entypo';
-
+import CategoryIcon from 'react-native-vector-icons/MaterialIcons';
 interface Prop {
   children: string | undefined;
   onLayout: (e: LayoutChangeEvent) => void;
@@ -11,19 +10,12 @@ interface Prop {
   style?: false | undefined;
 }
 
-const Header = ({children}: Prop) => {
+const Header = prop => {
+  console.log(prop);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>{children}</Text>
-      <View style={styles.iconView}>
-        <HeartoIcon name="heart" size={20} color="#aaaaaa" />
-        <InfoIcon
-          name="information-outline"
-          size={20}
-          color="#aaaaaa"
-          style={styles.infoIcon}
-        />
-      </View>
+      <Text style={styles.headerText}>{prop.children}</Text>
     </View>
   );
 };

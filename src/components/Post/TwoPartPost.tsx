@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import Like1Icon from 'react-native-vector-icons/AntDesign';
 import ShareICon from 'react-native-vector-icons/FontAwesome';
-const SinglePost = () => {
+const TwoPartPost = () => {
   return (
     <View style={styles.container}>
       <View style={styles.profileView}>
@@ -22,6 +22,7 @@ const SinglePost = () => {
           Eight bytes walk into a bar.The bartender asks, Can I get you
           anything? Yeah, reply the bytes.Make us a double.
         </Text>
+        <Text style={styles.postDeliveryText}>Lorem ipsum dolor sit amet.</Text>
       </View>
       <View style={styles.hr} />
       <View style={styles.actionView}>
@@ -48,7 +49,7 @@ const SinglePost = () => {
   );
 };
 
-export default SinglePost;
+export default TwoPartPost;
 
 const styles = StyleSheet.create({
   container: {
@@ -88,9 +89,16 @@ const styles = StyleSheet.create({
   postText: {
     color: '#fff',
     fontFamily: 'Lato-Regular',
-    fontSize: 16,
+    fontSize: 17,
     paddingHorizontal: 2,
-    paddingBottom: 10,
+    paddingBottom: 5,
+  },
+  postDeliveryText: {
+    color: '#e9e9e9',
+    fontFamily: 'SourceSansPro-Regular',
+    fontSize: 14,
+    paddingHorizontal: 2,
+    paddingBottom: 6,
   },
   hr: {
     borderBottomColor: '#e9e9e9',
