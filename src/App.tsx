@@ -1,13 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import MainScreen from './screens/MainScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import Route from './routers/Route';
 
 const App = () => {
   return (
-    <View>
-      <MainScreen />
-      <Text>Hello</Text>
-    </View>
+    <>
+      <NavigationContainer>
+        <Route />
+      </NavigationContainer>
+    </>
   );
 };
 
