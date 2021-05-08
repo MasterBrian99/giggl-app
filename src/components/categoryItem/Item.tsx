@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-// interface Prop {
-//   onPress: () => void;
-// }
+interface Prop {
+  name: string;
+}
 
-const Item = () => {
+const Item = ({name}: Prop) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.categoryName}>Programming</Text>
+      <Text style={styles.categoryName}>{name}</Text>
     </View>
   );
 };

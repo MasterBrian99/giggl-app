@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import Like1Icon from 'react-native-vector-icons/AntDesign';
 import ShareICon from 'react-native-vector-icons/FontAwesome';
-const TwoPartPost = () => {
+import {TouchableOpacity} from 'react-native-gesture-handler';
+
+interface Prop {
+  category: string;
+  setup: string;
+  delivery: string;
+  name: string;
+  color: string;
+  likes: number;
+}
+
+const TwoPartPost = ({category, setup, delivery, name, color, likes}: Prop) => {
+  const [likeColor, setLikeColor] = useState(color);
+
   return (
     <View style={styles.container}>
       <View style={styles.profileView}>
@@ -13,37 +26,44 @@ const TwoPartPost = () => {
           />
         </View>
         <View>
-          <Text style={styles.profileName}>Mahinda Rajapaksha</Text>
-          <Text style={styles.postTime}>4 minutes ago</Text>
+          <Text style={styles.profileName}>{name}</Text>
+          <Text style={styles.postTime}>{category}</Text>
         </View>
       </View>
       <View>
-        <Text style={styles.postText}>
-          Eight bytes walk into a bar.The bartender asks, Can I get you
-          anything? Yeah, reply the bytes.Make us a double.
-        </Text>
-        <Text style={styles.postDeliveryText}>Lorem ipsum dolor sit amet.</Text>
+        <Text style={styles.postText}>{setup}</Text>
+        <Text style={styles.postDeliveryText}>{delivery}</Text>
       </View>
       <View style={styles.hr} />
       <View style={styles.actionView}>
-        <View style={styles.actionLikeView}>
-          <Like1Icon
-            name="like1"
-            size={20}
-            color="#f55263"
-            style={styles.actionIcon}
-          />
-          <Text style={styles.actionLikeText}>31 likes</Text>
-        </View>
-        <View style={styles.actionShareView}>
-          <ShareICon
-            name="share"
-            size={20}
-            color="#f55263"
-            style={styles.actionIcon}
-          />
-          <Text style={styles.actionShareText}>Share</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => {
+            likeColor === '#aaaaaa'
+              ? setLikeColor('#f55263')
+              : setLikeColor('#aaaaaa');
+          }}>
+          <View style={styles.actionLikeView}>
+            <Like1Icon
+              name="like1"
+              size={20}
+              color={likeColor}
+              style={styles.actionIcon}
+            />
+            <Text style={styles.actionLikeText}>{likes} likes</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={styles.actionShareView}>
+            <ShareICon
+              name="share"
+              size={20}
+              color="#f55263"
+              style={styles.actionIcon}
+            />
+            <Text style={styles.actionShareText}>Share</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -56,7 +76,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#4e596f',
     marginHorizontal: 9,
     borderRadius: 5,
-    marginTop: 10,
+    marginVertical: 5,
     paddingHorizontal: 10,
   },
   profileView: {

@@ -1,7 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {StackNavigationProp} from '@react-navigation/stack';
 
-const MainScreen = ({navigation}) => {
+interface Prop {
+  navigation: StackNavigationProp<any, any>;
+}
+
+const MainScreen = ({navigation}: Prop) => {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/img/logo.png')} style={styles.logo} />
