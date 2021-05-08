@@ -1,7 +1,7 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import {StyleSheet, ScrollView, RefreshControl} from 'react-native';
 import TwoPartPost from '../components/post/TwoPartPost';
-import {generateRandomName} from '../data/Data';
+import {generateRandomName, generateRandomLike} from '../data/Data';
 
 interface Prop {
   category: string;
@@ -46,6 +46,8 @@ const CategoryHome = ({route}) => {
       }>
       {jokes.map((el, i: number) => (
         <TwoPartPost
+          likes={generateRandomLike()}
+          color={'#aaaaaa'}
           name={generateRandomName()}
           key={i}
           category={el.category}

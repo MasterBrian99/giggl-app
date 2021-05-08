@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import Like1Icon from 'react-native-vector-icons/AntDesign';
 import ShareICon from 'react-native-vector-icons/FontAwesome';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 interface Prop {
   category: string;
   setup: string;
   delivery: string;
   name: string;
+  color: string;
+  likes: number;
 }
 
-const TwoPartPost = ({category, setup, delivery, name}: Prop) => {
+const TwoPartPost = ({category, setup, delivery, name, color, likes}: Prop) => {
+  const [likeColor, setLikeColor] = useState(color);
+
   return (
     <View style={styles.container}>
       <View style={styles.profileView}>
@@ -31,24 +36,34 @@ const TwoPartPost = ({category, setup, delivery, name}: Prop) => {
       </View>
       <View style={styles.hr} />
       <View style={styles.actionView}>
-        <View style={styles.actionLikeView}>
-          <Like1Icon
-            name="like1"
-            size={20}
-            color="#f55263"
-            style={styles.actionIcon}
-          />
-          <Text style={styles.actionLikeText}>31 likes</Text>
-        </View>
-        <View style={styles.actionShareView}>
-          <ShareICon
-            name="share"
-            size={20}
-            color="#f55263"
-            style={styles.actionIcon}
-          />
-          <Text style={styles.actionShareText}>Share</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => {
+            likeColor === '#aaaaaa'
+              ? setLikeColor('#f55263')
+              : setLikeColor('#aaaaaa');
+          }}>
+          <View style={styles.actionLikeView}>
+            <Like1Icon
+              name="like1"
+              size={20}
+              color={likeColor}
+              style={styles.actionIcon}
+            />
+            <Text style={styles.actionLikeText}>{likes} likes</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={styles.actionShareView}>
+            <ShareICon
+              name="share"
+              size={20}
+              color="#f55263"
+              style={styles.actionIcon}
+            />
+            <Text style={styles.actionShareText}>Share</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -34,3 +34,7 @@ export const generateRandomName = () => {
   // eslint-disable-next-line no-bitwise
   return randomName[(randomName.length * Math.random()) | 0];
 };
+
+export const generateRandomLike = () => {
+  return Math.floor(Math.random() * 50);
+};
