@@ -13,10 +13,8 @@ const MainScreen = ({navigation}: Prop) => {
       <View style={styles.mainView}>
         <Text style={styles.header}>Giggl</Text>
         <Text style={styles.info}>
-          {' '}
-          Keep your music class up tempo with this collection of our favorite
-          corny music jokes collected from our favorite online teachers and
-          websites.
+          Enjoy the best cute, cheesy and corny jokes to actually make your
+          friends and family laugh
         </Text>
         <TouchableOpacity
           style={styles.button}

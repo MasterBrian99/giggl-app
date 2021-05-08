@@ -19,6 +19,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Built Using](#built_using)
+- [Screenshots](#screenshots)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -60,3 +61,11 @@ yarn android
 [React-Navigation](https://reactnavigation.org/)
 
 ---
+
+## Screenshots <a name = "screenshots"></a>
+
+<img width=300px  src="./readme/1.jpg" alt="1">
+<img width=300px  src="./readme/2.jpg" alt="1">
+<img width=300px  src="./readme/3.jpg" alt="1">
+<img width=300px  src="./readme/4.jpg" alt="1">
+<img width=300px  src="./readme/5.jpg" alt="1">
