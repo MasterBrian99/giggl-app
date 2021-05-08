@@ -1,18 +1,18 @@
 import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import SinglePost from '../components/post/SinglePost';
 import TwoPartPost from '../components/post/TwoPartPost';
+import SinglePost from '../components/post/SinglePost';
 
-const Home = () => {
+const CategoryHome = () => {
   return (
     <ScrollView style={styles.main}>
-      <SinglePost />
       <TwoPartPost />
+      <SinglePost />
     </ScrollView>
   );
 };
 
-export default Home;
+export default CategoryHome;
 
 const styles = StyleSheet.create({
   main: {

@@ -1,21 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, LayoutChangeEvent} from 'react-native';
 import InfoIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import HeartoIcon from 'react-native-vector-icons/Entypo';
-import ChevronBackIcon from 'react-native-vector-icons/Ionicons';
-const Header = () => {
+import CategoryIcon from 'react-native-vector-icons/MaterialIcons';
+interface Prop {
+  children: string | undefined;
+  onLayout: (e: LayoutChangeEvent) => void;
+  allowFontScaling?: boolean | undefined;
+  tintColor?: string | undefined;
+  style?: false | undefined;
+}
+
+const Header = prop => {
+  console.log(prop);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Feeds</Text>
-      <View style={styles.iconView}>
-        <HeartoIcon name="heart" size={20} color="#aaaaaa" />
-        <InfoIcon
-          name="information-outline"
-          size={20}
-          color="#aaaaaa"
-          style={styles.infoIcon}
-        />
-      </View>
+      <Text style={styles.headerText}>{prop.children}</Text>
     </View>
   );
 };
