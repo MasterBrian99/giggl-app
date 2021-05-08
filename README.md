@@ -64,8 +64,4 @@ yarn android
 
 ## Screenshots <a name = "screenshots"></a>
 
-<img width=300px  src="./readme/1.jpg" alt="1">
-<img width=300px  src="./readme/2.jpg" alt="1">
-<img width=300px  src="./readme/3.jpg" alt="1">
-<img width=300px  src="./readme/4.jpg" alt="1">
-<img width=300px  src="./readme/5.jpg" alt="1">
+<img width=300px  src="./readme/1.jpg" alt="1"> <img width=300px  src="./readme/2.jpg" alt="1"> <img width=300px  src="./readme/3.jpg" alt="1"> <img width=300px  src="./readme/4.jpg" alt="1"> <img width=300px  src="./readme/5.jpg" alt="1">
