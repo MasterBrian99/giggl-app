@@ -2,7 +2,14 @@ import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import Like1Icon from 'react-native-vector-icons/AntDesign';
 import ShareICon from 'react-native-vector-icons/FontAwesome';
-const TwoPartPost = () => {
+
+interface Prop {
+  category: string;
+  setup: string;
+  delivery: string;
+}
+
+const TwoPartPost = ({category, setup, delivery}: Prop) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileView}>
@@ -14,15 +21,12 @@ const TwoPartPost = () => {
         </View>
         <View>
           <Text style={styles.profileName}>Mahinda Rajapaksha</Text>
-          <Text style={styles.postTime}>4 minutes ago</Text>
+          <Text style={styles.postTime}>{category}</Text>
         </View>
       </View>
       <View>
-        <Text style={styles.postText}>
-          Eight bytes walk into a bar.The bartender asks, Can I get you
-          anything? Yeah, reply the bytes.Make us a double.
-        </Text>
-        <Text style={styles.postDeliveryText}>Lorem ipsum dolor sit amet.</Text>
+        <Text style={styles.postText}>{setup}</Text>
+        <Text style={styles.postDeliveryText}>{delivery}</Text>
       </View>
       <View style={styles.hr} />
       <View style={styles.actionView}>
@@ -56,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#4e596f',
     marginHorizontal: 9,
     borderRadius: 5,
-    marginTop: 10,
+    marginVertical: 5,
     paddingHorizontal: 10,
   },
   profileView: {
