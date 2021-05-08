@@ -12,7 +12,9 @@ const Category = ({navigation}: Prop) => {
     <ScrollView style={styles.container}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.navigate('CategoryHome', {
+            headerName: 'Sunami',
+          });
         }}>
         <Item />
       </TouchableOpacity>

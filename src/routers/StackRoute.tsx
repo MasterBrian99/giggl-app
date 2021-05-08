@@ -8,6 +8,8 @@ import {StyleSheet, View} from 'react-native';
 import InfoIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import CategoryIcon from 'react-native-vector-icons/MaterialIcons';
 import Info from '../screens/Info';
+import CategoryHome from '../screens/CategoryHome';
+
 const Stack = createStackNavigator();
 
 const StackRoute = () => {
@@ -142,6 +144,58 @@ const StackRoute = () => {
               </View>
             ),
             title: 'About',
+          })}
+        />
+        <Stack.Screen //CategoryHome
+          name="CategoryHome"
+          component={CategoryHome}
+          options={({navigation, route}) => ({
+            headerStyle: {
+              backgroundColor: '#242a38',
+              height: 60,
+              shadowRadius: 0,
+              shadowColor: 'transparent',
+            },
+            headerTitleStyle: {
+              fontFamily: 'Lato-Bold',
+              color: '#aaaaaa',
+            },
+            headerLeft: props => (
+              <ChevronBackIcon
+                name="chevron-back"
+                size={30}
+                color="#aaaaaa"
+                {...props}
+                onPress={() => {
+                  navigation.goBack();
+                }}
+              />
+            ),
+            headerRight: props => (
+              <View style={styles.iconView}>
+                <CategoryIcon
+                  name="category"
+                  size={20}
+                  color="#aaaaaa"
+                  {...props}
+                  onPress={() => {
+                    navigation.navigate('Category');
+                  }}
+                />
+                <InfoIcon
+                  name="information-outline"
+                  size={20}
+                  color="#aaaaaa"
+                  style={styles.infoIcon}
+                  {...props}
+                  onPress={() => {
+                    navigation.navigate('Info');
+                  }}
+                />
+              </View>
+            ),
+            //@ts-ignore
+            title: route?.params?.headerName,
           })}
         />
       </Stack.Navigator>
