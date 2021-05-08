@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import SinglePost from '../components/Post/SinglePost';
-import TwoPartPost from '../components/Post/TwoPartPost';
+import SinglePost from '../components/post/SinglePost';
+import TwoPartPost from '../components/post/TwoPartPost';
 
 const Home = () => {
   return (
