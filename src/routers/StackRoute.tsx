@@ -60,7 +60,7 @@ const StackRoute = () => {
                 />
               </View>
             ),
-            title: 'Feeds',
+            title: 'Home',
           })}
         />
         <Stack.Screen //Category

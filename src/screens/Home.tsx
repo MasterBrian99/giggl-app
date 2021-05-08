@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, ScrollView, RefreshControl} from 'react-native';
-import SinglePost from '../components/post/SinglePost';
 import TwoPartPost from '../components/post/TwoPartPost';
+import {generateRandomName} from '../data/Data';
 
 interface Prop {
   category: string;
@@ -29,7 +29,15 @@ const Home = () => {
   };
   useEffect(() => {
     getData();
+    return () => {
+      setJokes([]);
+    };
   }, []);
+
+  const getRandom = () => {
+    let name = generateRandomName();
+    return name;
+  };
 
   return (
     <ScrollView
@@ -47,6 +55,7 @@ const Home = () => {
           category={el.category}
           setup={el.setup}
           delivery={el.delivery}
+          name={getRandom()}
         />
       ))}
     </ScrollView>

@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import Item from '../components/categoryItem/Item';
 import {StackNavigationProp} from '@react-navigation/stack';
-
+import {categoryItem} from '../data/Data';
 interface Prop {
   navigation: StackNavigationProp<any, any>;
 }
@@ -10,17 +10,18 @@ interface Prop {
 const Category = ({navigation}: Prop) => {
   return (
     <ScrollView style={styles.container}>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('CategoryHome', {
-            headerName: 'Sunami',
-          });
-        }}>
-        <Item />
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Item />
-      </TouchableOpacity>
+      {categoryItem.map((el, i) => (
+        <TouchableOpacity
+          key={i}
+          onPress={() => {
+            navigation.navigate('CategoryHome', {
+              headerName: el,
+              reqHeader: el,
+            });
+          }}>
+          <Item name={el} />
+        </TouchableOpacity>
+      ))}
     </ScrollView>
   );
 };

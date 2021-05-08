@@ -7,9 +7,10 @@ interface Prop {
   category: string;
   setup: string;
   delivery: string;
+  name: string;
 }
 
-const TwoPartPost = ({category, setup, delivery}: Prop) => {
+const TwoPartPost = ({category, setup, delivery, name}: Prop) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileView}>
@@ -20,7 +21,7 @@ const TwoPartPost = ({category, setup, delivery}: Prop) => {
           />
         </View>
         <View>
-          <Text style={styles.profileName}>Mahinda Rajapaksha</Text>
+          <Text style={styles.profileName}>{name}</Text>
           <Text style={styles.postTime}>{category}</Text>
         </View>
       </View>
